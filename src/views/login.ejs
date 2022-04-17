@@ -8,6 +8,8 @@
     <div class="col-lg-8 my-5">
       <h1 class="text-center">Login | Register</h1>
       <p class="text-center lead"><%= csrfToken %></p>
+      <!--  -->
+      <%- include('includes/messages'); %>
 
         <div class="row">
             <!--Register-->
@@ -15,17 +17,14 @@
                 <h4>Make your register</h4>
                 <p>Create your account now!</p>
                 <form action="/login/register" method="post">
+                  <input type="hidden" name="_csrf" value=<%= csrfToken %>>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                      <label>Email address</label>
+                      <input type="email" class="form-control" name="email" placeholder="Enter email">
                     </div>
                     <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" class="form-control" name="name" placeholder="Your name">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
+                      <label>Password</label>
+                      <input type="password" class="form-control" name="password" placeholder="Password">
                     </div>
                     <button type="submit" class="btn btn-primary my-3">Register</button>
                   </form>
@@ -33,15 +32,17 @@
 
             <!--Login-->
             <div class="col-lg">
-                <h4>Make your login</h4>
+              <h4>Make your login</h4>
+              <p>Please make your login</p>
                 <form action="/login/login" method="post">
+                  <input type="hidden" name="_csrf" value=<%= csrfToken %>>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                      <label>Email address</label>
+                      <input type="email" class="form-control" name="email" placeholder="Enter email">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
+                      <label>Password</label>
+                      <input type="password" class="form-control" name="password" placeholder="Password">
                     </div>
                     <button type="submit" class="btn btn-primary my-3">Login</button>
                   </form>
