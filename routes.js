@@ -10,5 +10,6 @@ routes.get('/', homeController.index);
 // routess login
 routes.get('/login', loginController.index);
 routes.post('/login/register', loginController.register);
+routes.post('/login/login', loginController.login);
 
 module.exports = routes;
